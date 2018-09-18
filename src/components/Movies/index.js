@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-//import {NavLink, BrowserRouter, Route} from 'react-router-dom';
+import {NavLink, BrowserRouter} from 'react-router-dom';
 
 export default class Movies extends Component {
     constructor(props) {
@@ -16,14 +16,20 @@ export default class Movies extends Component {
     }
 
     render() {
-        console.log(this.state.movies);
         const movies = this.state.movies;
+        movies.sort((a,b)=>{
+            let keyA = a.episode_id;
+            let keyB = b.episode_id;
+            return ((keyA < keyB) ? -1 : ((keyA > keyB) ? 1 : 0));
+        });
         return (
-            <ul className={'movieList'}>
-                {movies.map((el,i)=>{
-                   return <li className={'movieTitle'} key={i}>{el.title}</li>
-                })}
-            </ul>
+            <BrowserRouter>
+                <ul className={'movieList'}>
+                    {movies.map((el,i)=>{
+                        return <NavLink key={el.title} to={el.title}><li className={'movieTitle'} key={i}>{el.title}</li></NavLink>
+                    })}
+                </ul>
+            </BrowserRouter>
         );
     }
 }

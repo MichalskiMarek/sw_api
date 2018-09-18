@@ -9,12 +9,12 @@ export default class MainNav extends Component {
             <BrowserRouter>
                     <nav>
                         <ul className={'mainNav'}>
-                            <NavItem name={'Movies'}/>
+                            <NavItem name={'Opening Crawl'}/>
                             <NavItem name={'Characters'}/>
                             <NavItem name={'Starships'}/>
                             <NavItem name={'Planets'}/>
                         </ul>
-                        <Route path={'/Movies'} component={Movies}/>
+                        <Route path={'/'} component={Movies}/>
                     </nav>
 
             </BrowserRouter>

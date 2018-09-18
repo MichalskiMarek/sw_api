@@ -38,6 +38,9 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center; }
+    body .movieList a {
+      text-decoration: none;
+      color: rgba(255, 255, 255, 0.69); }
     body .movieList .movieTitle {
       width: 200px;
       height: 20px;
