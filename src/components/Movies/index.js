@@ -27,7 +27,7 @@ export default class Movies extends Component {
             <ul className={'movieList'}>
                 {movies.map((el, i) => {
                     return (
-                        <Movie key={i} title={el.title} openingCrawl={el.opening_crawl}/>
+                        <Movie key={i} title={el.title} openingCrawl={el.opening_crawl} characters={el.characters}/>
                     )
                 })}
             </ul>

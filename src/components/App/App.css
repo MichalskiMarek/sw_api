@@ -3,10 +3,8 @@ body {
   margin: 0;
   padding: 0;
   background-size: cover;
-  background: url("../../img/milky-way-starry-sky-night-sky-star-957061.jpeg") fixed;
-  width: 100vw; }
+  background: url("../../img/milky-way-starry-sky-night-sky-star-957061.jpeg") fixed; }
   body .mainNav {
-    width: 100vw;
     height: 60px;
     background-color: #313131;
     border-bottom: 3px solid gold;
