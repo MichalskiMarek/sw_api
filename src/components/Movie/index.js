@@ -5,7 +5,8 @@ export default class Movie extends Component {
         super(props);
         this.state = {
             show: false,
-            characters: []
+            characters: [],
+            starships: []
         }
     }
 
@@ -14,6 +15,11 @@ export default class Movie extends Component {
             fetch(el)
                 .then(response => response.json())
                 .then(response => this.setState({characters: [...this.state.characters, response.name]}));
+        });
+        this.props.starships.forEach((el) => {
+            fetch(el)
+                .then(response => response.json())
+                .then(response => this.setState({starships: [...this.state.starships, response.name]}));
         });
     }
 
@@ -30,6 +36,10 @@ export default class Movie extends Component {
                     <div className={'openingCrawl'}>{this.props.openingCrawl}</div> : null) : null}
                 {window.location.href.indexOf("/Characters") > -1 ? (this.state.show ?
                     <div className={'openingCrawl'}>{this.state.characters.map((el, i) => {
+                        return <div key={i}>{el}</div>
+                    })}</div> : null) : null}
+                {window.location.href.indexOf("/Starships") > -1 ? (this.state.show ?
+                    <div className={'openingCrawl'}>{this.state.starships.map((el, i) => {
                         return <div key={i}>{el}</div>
                     })}</div> : null) : null}
             </li>
