@@ -18,7 +18,7 @@ export default class Movie extends Component {
     }
 
     render() {
-        let showCrawl = () => {
+        const showCrawl = () => {
             this.state.show ? this.setState({show: false}) : this.setState({show: true});
         };
         return (
